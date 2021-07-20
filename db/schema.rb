@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_20_095849) do
+ActiveRecord::Schema.define(version: 2021_07_20_101536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2021_07_20_095849) do
     t.index ["owner_id"], name: "index_games_on_owner_id"
   end
 
+  create_table "trades", force: :cascade do |t|
+    t.bigint "asker_id", null: false
+    t.bigint "receiver_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["asker_id"], name: "index_trades_on_asker_id"
+    t.index ["receiver_id"], name: "index_trades_on_receiver_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -56,4 +65,6 @@ ActiveRecord::Schema.define(version: 2021_07_20_095849) do
   add_foreign_key "favorites", "games"
   add_foreign_key "favorites", "users"
   add_foreign_key "games", "users", column: "owner_id"
+  add_foreign_key "trades", "users", column: "asker_id"
+  add_foreign_key "trades", "users", column: "receiver_id"
 end
