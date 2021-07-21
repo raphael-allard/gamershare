@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
       end
 
       it 'is not valid without address' do
-        user.address = nil
+        user.city = nil
         expect(user).to_not be_valid
       end
     end
