@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let!(:user) { create(:user) }
 
-  describe '::new' do
+  describe '::create' do
     context 'persistence' do
       it 'persists user' do
         expect(User.count).to eq(1)
@@ -20,9 +20,8 @@ RSpec.describe User, type: :model do
         expect(user).to_not be_valid
       end
 
-      it 'is not valid with username already taken' do
-        new_user = build(:user)
-        new_user.email = "new_test@gmail.com"
+      it 'is not valid if username already taken' do
+        new_user = build(:user, email: "new_test@gmail.com")
         new_user.valid?
         expect(new_user.errors.messages).to include(:username)
       end
