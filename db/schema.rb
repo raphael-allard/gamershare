@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_21_093751) do
+ActiveRecord::Schema.define(version: 2021_07_24_074553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_07_21_093751) do
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.integer "nostalgia_point"
-    t.string "console"
+    t.string "platform"
     t.string "developer"
     t.date "release_date"
     t.string "game_mode"

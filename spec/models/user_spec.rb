@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
 
   describe '::create' do
     context 'persistence' do
-      it 'persists user' do
+      it 'persists the user' do
         expect(User.count).to eq(1)
       end
     end

@@ -1,11 +1,40 @@
 require 'rails_helper'
 
 RSpec.describe Game, type: :model do
-  let(:game) { create(:game) }
+  let!(:game) { create(:game) }
 
-  context '#import_data' do
-    it 'returns the right title' do
-      expect(game.title).to eq("Mega Man X")
+  describe '::create' do
+    context 'persistence' do
+      it 'persists the game' do
+        expect(Game.count).to eq(1) 
+      end
+    end
+
+    context 'validations' do
+      it 'is valid with valid attributes' do
+        expect(game).to be_valid
+      end
+
+      it 'is not valid without title' do
+        game.title = nil
+        expect(game).to_not be_valid
+      end
+
+      it 'is not valid without nostalgia_point' do
+        game.nostalgia_point = nil
+        expect(game).to_not be_valid
+      end
+
+      it 'is not valid if nostalgia_point not 0..10' do
+        game.nostalgia_point = 15
+        game.valid?
+        expect(game.errors[:nostalgia_point]).to include("is not included in the list")
+      end
+
+      it 'is not valid without platform' do
+        game.platform = nil
+        expect(game).to_not be_valid
+      end
     end
   end
 end
