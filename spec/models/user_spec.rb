@@ -21,9 +21,9 @@ RSpec.describe User, type: :model do
       end
 
       it 'is not valid if username already taken' do
-        new_user = build(:user, email: "new_test@gmail.com")
+        new_user = User.new(user.attributes)
         new_user.valid?
-        expect(new_user.errors.messages).to include(:username)
+        expect(new_user.errors).to include(:username)
       end
 
       it 'is not valid without address' do

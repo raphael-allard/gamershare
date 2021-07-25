@@ -1,9 +1,17 @@
 FactoryBot.define do
   factory :user do
-    email { "test@gmail.com" }
+    email
     password { "azerty" }
-    username { "test" }
+    username
     city { "Paris"}
+  end
+
+  sequence :email do |n|
+    "test#{n}@gmail.com"
+  end
+
+  sequence :username do |n|
+    "test-#{n}"
   end
 
   factory :game do
@@ -15,5 +23,10 @@ FactoryBot.define do
     game_mode { "Single player" }
     genre { ["Adventure", "Platform", "Shooter"] }
     association :owner, factory: :user
+  end
+
+  factory :favorite do
+    user
+    game
   end
 end

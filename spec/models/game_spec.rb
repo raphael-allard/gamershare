@@ -28,7 +28,7 @@ RSpec.describe Game, type: :model do
       it 'is not valid if nostalgia_point not 0..10' do
         game.nostalgia_point = 15
         game.valid?
-        expect(game.errors[:nostalgia_point]).to include("is not included in the list")
+        expect(game.errors).to include(:nostalgia_point)
       end
 
       it 'is not valid without platform' do
