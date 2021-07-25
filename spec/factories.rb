@@ -29,4 +29,14 @@ FactoryBot.define do
     user
     game
   end
+
+  factory :trade do
+    association :asker, factory: :user
+    association :receiver, factory: :user
+  end
+
+  factory :trade_game do
+    trade
+    game
+  end
 end
