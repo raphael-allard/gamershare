@@ -1,4 +1,4 @@
 class Conversation < ApplicationRecord
-  belongs_to :first_participant
-  belongs_to :second_participant
+  belongs_to :first_participant, class_name: "User"
+  belongs_to :second_participant, class_name: "User"
 end
