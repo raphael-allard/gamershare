@@ -44,4 +44,10 @@ FactoryBot.define do
     association :first_participant, factory: :user
     association :second_participant, factory: :user
   end
+
+  factory :message do
+    content { "I love this game!" }
+    conversation
+    user
+  end
 end
