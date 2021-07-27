@@ -31,5 +31,11 @@ RSpec.describe User, type: :model do
         expect(user).to_not be_valid
       end
     end
+
+    context 'associations' do
+      it 'has many games' do
+        expect(user.games.new.class).to eq(Game)
+      end
+    end
   end
 end
