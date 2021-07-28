@@ -9,7 +9,7 @@ RSpec.describe Game, type: :model do
         expect(Game.count).to eq(1) 
       end
     end
-
+    
     context 'validations' do
       it 'is valid with valid attributes' do
         expect(game).to be_valid
@@ -25,7 +25,7 @@ RSpec.describe Game, type: :model do
         expect(game).to_not be_valid
       end
 
-      it 'is not valid if nostalgia_point not 0..10' do
+      it 'is not valid if nostalgia_point diff from 0..10' do
         game.nostalgia_point = 15
         game.valid?
         expect(game.errors).to include(:nostalgia_point)

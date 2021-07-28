@@ -31,5 +31,27 @@ RSpec.describe User, type: :model do
         expect(user).to_not be_valid
       end
     end
+
+    context 'associations' do
+      it 'has many games' do
+        expect(user.games.new.class).to eq(Game)
+      end
+
+      it 'destroys games associated' do
+        user.games.create(attributes_for :game)
+        user.destroy
+        expect(user.games.count).to eq(0)
+      end
+      
+      it 'has many favorites' do
+        expect(user.favorites.new.class).to eq(Favorite)
+      end
+
+      it 'destroys favorites associated' do
+        user.favorites.create!(game: create(:game))
+        user.destroy
+        expect(user.favorites.count).to eq(0)
+      end
+    end
   end
 end
