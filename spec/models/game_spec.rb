@@ -36,5 +36,27 @@ RSpec.describe Game, type: :model do
         expect(game).to_not be_valid
       end
     end
+
+    context 'associations' do
+      it 'has many trade games' do
+        expect(game.trade_games.new.class).to eq(TradeGame)
+      end
+
+      it 'destroys trade games associated' do
+        game.trade_games.create!(trade: build(:trade))
+        game.destroy
+        expect(game.trade_games.count).to eq(0)
+      end
+
+      it 'has many favorites' do
+        expect(game.favorites.new.class).to eq(Favorite)
+      end
+
+      it 'destroys favorites associated' do
+        game.favorites.create(user: build(:user))
+        game.destroy
+        expect(game.favorites.count).to eq(0)
+      end
+    end
   end
 end
