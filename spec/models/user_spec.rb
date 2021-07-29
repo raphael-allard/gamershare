@@ -48,9 +48,19 @@ RSpec.describe User, type: :model do
       end
 
       it 'destroys favorites associated' do
-        user.favorites.create!(game: create(:game))
+        user.favorites.create(game: create(:game))
         user.destroy
         expect(user.favorites.count).to eq(0)
+      end
+
+      it 'has many trades' do
+        expect(user.trades.new.class).to eq(Trade)
+      end
+
+      it 'destroys trades associated' do
+        user.trades.create!(receiver: build(:user))
+        user.destroy
+        expect(user.trades.count).to eq(0)
       end
     end
   end
