@@ -43,7 +43,7 @@ RSpec.describe Game, type: :model do
       end
 
       it 'destroys trade games associated' do
-        game.trade_games.create!(trade: build(:trade))
+        game.trade_games.create(trade: build(:trade))
         game.destroy
         expect(game.trade_games.count).to eq(0)
       end
