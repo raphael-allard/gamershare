@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :games, foreign_key: :owner_id, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :trades, foreign_key: :asker_id, dependent: :destroy
 
   validates :username, :city, presence: true
   validates :username, uniqueness: true
