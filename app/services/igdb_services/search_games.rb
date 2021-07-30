@@ -1,11 +1,15 @@
 module IgdbServices
   class SearchGames
-    def fetch_games(keyword)
+    def initialize(keyword)
+      @keyword = keyword
+    end
+
+    def call
       uri = URI.parse("https://api.igdb.com/v4/search")
       request = Net::HTTP::Post.new(uri)
       request["Client-Id"] = ENV["IGDB_CLIENT_ID"]
       request["Authorization"] = ENV["IGDB_AUTHORIZATION"]
-      request.body = "fields *; search \"#{keyword}\"; limit 5;"
+      request.body = "fields *; search \"#{@keyword}\"; limit 5;"
 
       req_options = {
         use_ssl: uri.scheme == "https",
