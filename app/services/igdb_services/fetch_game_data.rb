@@ -25,7 +25,7 @@ module IgdbServices
         http.request(request)
       end
 
-      JSON.parse(response.body)
+      JSON.parse(response.body).first
     end
   end
 end

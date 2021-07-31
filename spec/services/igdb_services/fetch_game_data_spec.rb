@@ -7,7 +7,7 @@ RSpec.describe IgdbServices::FetchGameData do
     context 'when fetches game data' do
       it 'returns the right name' do
         data = fetch_game_data.call
-        expect(data.first["name"]).to eq("World of Warcraft")
+        expect(data["name"]).to eq("World of Warcraft")
       end
     end
   end
