@@ -15,8 +15,8 @@ RSpec.describe Game, type: :model do
         expect(game).to be_valid
       end
 
-      it 'is not valid without title' do
-        game.title = nil
+      it 'is not valid without name' do
+        game.name = nil
         expect(game).to_not be_valid
       end
 
