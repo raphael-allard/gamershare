@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_24_074553) do
+ActiveRecord::Schema.define(version: 2021_07_31_072435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,16 +34,16 @@ ActiveRecord::Schema.define(version: 2021_07_24_074553) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
     t.integer "nostalgia_point"
     t.string "platform"
-    t.string "developer"
     t.date "release_date"
-    t.string "game_mode"
-    t.string "genre"
     t.bigint "owner_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "developers", default: [], array: true
+    t.string "game_modes", default: [], array: true
+    t.string "genres", default: [], array: true
     t.index ["owner_id"], name: "index_games_on_owner_id"
   end
 

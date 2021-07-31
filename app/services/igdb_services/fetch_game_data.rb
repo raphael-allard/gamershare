@@ -11,7 +11,6 @@ module IgdbServices
       request["Authorization"] = "Bearer 714uljqwalcj72lsjopmlllrrm4sun"
       request.body = "fields
                         name,
-                        platforms.name,
                         first_release_date,
                         game_modes.name,
                         genres.name,
