@@ -4,13 +4,13 @@ RSpec.describe Game, type: :model do
   let!(:game) { create(:game) }
 
   describe '::create' do
-    context 'persistence' do
+    context 'with persistence' do
       it 'persists the game' do
         expect(Game.count).to eq(1) 
       end
     end
     
-    context 'validations' do
+    context 'with validations' do
       it 'is valid with valid attributes' do
         expect(game).to be_valid
       end
@@ -37,7 +37,7 @@ RSpec.describe Game, type: :model do
       end
     end
 
-    context 'associations' do
+    context 'with associations' do
       it 'has many trade games' do
         expect(game.trade_games.new.class).to eq(TradeGame)
       end
