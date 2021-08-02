@@ -6,7 +6,6 @@ module IgdbServices
       @data = data
     end
 
-    
     def call
       Game.new(
         name: @data["name"],
