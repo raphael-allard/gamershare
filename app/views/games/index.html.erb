@@ -1,7 +1,5 @@
 <h1>Games#index</h1>
 
 <ul>
-  <% @games.each do |game| %>
-    <li><%= game.name %></li>
-  <% end %>
+  <%= render(GameCardComponent.with_collection(@games)) %>
 </ul>
