@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Game, type: :model do
+RSpec.describe Favorite, type: :model do
   let!(:favorite) { create(:favorite) }
 
   describe '::create' do
