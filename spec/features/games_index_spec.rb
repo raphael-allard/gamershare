@@ -18,7 +18,7 @@ RSpec.describe "Games#index", type: :feature do
     end
 
     it "can click on the button 'Add a game'" do
-      click_link "Add a game"
+      click_on "Add a game"
       expect(page).to have_current_path(new_game_path)
     end
   end
