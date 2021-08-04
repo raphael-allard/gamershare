@@ -1,6 +1,12 @@
 <h1>Games#index</h1>
 <%= link_to "Add a game", new_game_path %>
 
+<%= form_with url: games_path, method: :get, html: { id: "game-search-bar" } do |f| %>
+  <%= f.text_field :query,
+                   placeholder: 'Search a game' %>
+  <%= f.submit "Search" %>
+<% end %>
+
 <ul>
   <%= render(GameCardComponent.with_collection(@games)) %>
 </ul>
