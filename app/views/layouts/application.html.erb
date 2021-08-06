@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <%= render NavbarComponent.new(user: current_user) %>
     <%= render 'shared/flashes' %>
     <%= yield %>
   </body>

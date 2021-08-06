@@ -1,5 +1,4 @@
 <h1>Games#index</h1>
-<%= link_to "Add a game", new_game_path %>
 
 <div data-controller="refresh-games-list">
   <%= form_with url: games_path,
@@ -15,4 +14,4 @@
   <%= render "games/partials/list", games: @games %>
 </div>
 
-<%= render(NavbarComponent.new) %>
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>

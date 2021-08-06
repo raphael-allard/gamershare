@@ -9,7 +9,7 @@ RSpec.describe "User registration", type: :feature do
       fill_in "user_password", with: "123456"
       fill_in "user_password_confirmation", with: "123456"
       fill_in "City", with: "Paris"
-      click_on "Sign up"
+      click_on "Create my account"
       
       expect(page).to have_content "Log out"
       expect(User.count).to eq(1)
@@ -20,7 +20,7 @@ RSpec.describe "User registration", type: :feature do
   context "when gived wrong credentials" do
     it "displays an error flash alert" do
       visit new_user_registration_path
-      click_on "Sign up"
+      click_on "Create my account"
   
       expect(page).to have_current_path "/users"
       expect(page).to have_content "Please review the problems below:"

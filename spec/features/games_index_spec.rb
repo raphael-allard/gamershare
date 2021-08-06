@@ -10,11 +10,11 @@ RSpec.describe "Games#index", type: :feature do
     end
 
     it "can see a list of games" do
-      expect(page).to have_selector "ul li"
+      expect(page).to have_selector("ul")
     end
 
     it "can search for a game" do
-      expect(page).to have_css "#game-search-bar"
+      expect(page).to have_css("#game-search-bar")
     end
 
     it "can click on the button 'Add a game'" do
