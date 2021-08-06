@@ -7,8 +7,8 @@ module IgdbServices
     def call
       uri = URI.parse("https://api.igdb.com/v4/games")
       request = Net::HTTP::Post.new(uri)
-      request["Client-Id"] = "4tj802aytt7uis6le8tmeu4l3hf3b8"
-      request["Authorization"] = "Bearer 714uljqwalcj72lsjopmlllrrm4sun"
+      request["Client-Id"] = ENV["IGDB_CLIENT_ID"]
+      request["Authorization"] = ENV["IGDB_AUTHORIZATION"]
       request.body = "fields
                         name,
                         first_release_date,
