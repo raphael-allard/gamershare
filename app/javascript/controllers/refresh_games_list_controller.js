@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "form", "list", "searchInput" ]
+  static targets = ['form', 'list', 'searchInput'];
 
   update() {
     const url = `${this.formTarget.action}?query=${this.searchInputTarget.value}`;
