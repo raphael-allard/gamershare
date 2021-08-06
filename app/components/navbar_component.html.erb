@@ -2,9 +2,7 @@
   <h1></h1>
 
   <div>
-    <button></button>
-    <button></button>
+    <%= render(ButtonComponent.new(path: new_user_registration_path, class_name: "button-secondary").with_content("Sign in")) %>
+    <%= render(ButtonComponent.new(path: new_user_session_path, class_name: "button-primary").with_content("Sign up")) %>
   </div>
 </div>
-
-<%#= render(ButtonComponent.new(path: new_game_path, class_name: "button-primary").with_content("Add a game")) %>
