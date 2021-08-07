@@ -1,16 +1,15 @@
-<h1>Games#index</h1>
+<div style="background: url('<%= cl_image_path 'gamershare/retro-gaming' %>'); background-size: cover; height: 100vh;">
+  <div data-controller="refresh-games-list">
+    <%= form_with url: games_path,
+                  method: :get,
+                  data: { refresh_games_list_target: "form" },
+                  html: { id: "game-search-bar" } do |f| %>
+      <%= f.text_field :query,
+                      placeholder: "Search a game",
+                      data: { refresh_games_list_target: "searchInput",
+                      action: "keyup->refresh-games-list#update" } %>
+    <% end %>
 
-<div data-controller="refresh-games-list">
-  <%= form_with url: games_path,
-                method: :get,
-                data: { refresh_games_list_target: "form" },
-                html: { id: "game-search-bar" } do |f| %>
-    <%= f.text_field :query,
-                    placeholder: "Search a game",
-                    data: { refresh_games_list_target: "searchInput",
-                    action: "keyup->refresh-games-list#update" } %>
-  <% end %>
-
-  <%= render "games/partials/list", games: @games %>
+    <%= render "games/partials/list", games: @games %>
+  </div>
 </div>
-

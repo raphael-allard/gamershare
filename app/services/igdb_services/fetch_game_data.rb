@@ -14,7 +14,8 @@ module IgdbServices
                         first_release_date,
                         game_modes.name,
                         genres.name,
-                        involved_companies.company.name;
+                        involved_companies.company.name,
+                        cover.image_id;
                       where id = #{@id};"
 
       req_options = {

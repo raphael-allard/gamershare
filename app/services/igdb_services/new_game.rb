@@ -13,7 +13,7 @@ module IgdbServices
         release_date: converting_unix_to_date(@data["first_release_date"]),
         game_modes: parsing_data(@data["game_modes"]),
         genres: parsing_data(@data["genres"]),
-        cover: 
+        cover: cover_url_path(@data["cover"]["image_id"])
       )
     end
 

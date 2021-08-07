@@ -24,12 +24,12 @@ puts "#{wow.name} created!"
 
 joe_mac_data = IgdbServices::FetchGameData.new(12834).call
 joe_mac = IgdbServices::NewGame.new(joe_mac_data).call
-joe_mac.update!(nostalgia_point: 9, platform: "Super Nintento", owner: aelos)
+joe_mac.update!(nostalgia_point: 9, platform: "SPN", owner: aelos)
 puts "#{joe_mac.name} created!"
 
 zelda_data = IgdbServices::FetchGameData.new(1026).call
 zelda = IgdbServices::NewGame.new(zelda_data).call
-zelda.update!(nostalgia_point: 8, platform: "Super Nintento", owner: ragarou)
+zelda.update!(nostalgia_point: 8, platform: "SPN", owner: ragarou)
 puts "#{zelda.name} created!"
 
 puts "✅ --- Seed finished ---"
