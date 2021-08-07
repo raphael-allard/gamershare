@@ -1,1 +1,3 @@
-<%= link_to content, @path, class: @class_name %>
+<%= link_to @path, class: "button #{@class_name}" do %>
+  <p><%= content %></p>
+<% end %>

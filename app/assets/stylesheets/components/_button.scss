@@ -1,0 +1,33 @@
+.button {
+  display: flex;
+  width: 175px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.button.button-primary {
+  background-color: $green-gamershare;
+  margin-left: 5px;
+  p {
+    color: black;
+  }
+  &:hover {
+    background-color: #87f1e5;
+  }
+}
+
+.button.button-secondary {
+  background-color: transparent;
+  border: 1px solid $green-gamershare;
+  p {
+    color: $green-gamershare;
+  }
+  &:hover {
+    border: 1px solid black;
+    p {
+      color: black;
+    }
+  }
+}
