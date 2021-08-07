@@ -1,13 +1,13 @@
 <div class="d-flex justify-content-between align-items-center">
   <p>GamerShare</p>
 
-  <div>
+  <div class="d-flex align-items-center">
     <% if @user.nil? %>
       <%= render(ButtonComponent.new(path: new_user_session_path, class_name: "button-secondary").with_content("Sign in")) %>
       <%= render(ButtonComponent.new(path: new_user_registration_path, class_name: "button-primary").with_content("Sign up")) %>
     <% else %>
       <%= render(ButtonComponent.new(path: new_game_path, class_name: "button-primary").with_content("Add a game")) %>
-      <p>AVATAR</p>
+      <%= render(DropdownComponent.new(user: @user)) %>
     <% end %>
   </div>
 </div>
