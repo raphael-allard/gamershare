@@ -1,0 +1,12 @@
+.game-card {
+  width: 250px;
+  height: 375px;
+  border: 1px solid black;
+  border-radius: 3px;
+  > div:first-child {
+    height: 75%;
+  }
+  > div:last-child {
+    height: 25%;
+  }
+}
