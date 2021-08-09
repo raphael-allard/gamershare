@@ -14,6 +14,7 @@ FactoryBot.define do
     release_date { Date.new(1994,1,1) }
     game_modes { ["Single player"] }
     genres { ["Adventure", "Platform", "Shooter"] }
+    cover { "https://images.igdb.com/igdb/image/upload/t_cover_big/co3gcn.jpg" }
     association :owner, factory: :user
   end
 
