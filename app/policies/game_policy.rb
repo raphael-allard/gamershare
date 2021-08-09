@@ -1,7 +1,7 @@
 class GamePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.order(updated_at: :desc)
+      scope.includes(:owner).where.not(owner: user).order(updated_at: :desc)
     end
   end
 
