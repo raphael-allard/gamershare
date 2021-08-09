@@ -60,6 +60,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'bullet'
+  gem 'rack-mini-profiler'
 end
 
 group :test do
