@@ -8,4 +8,8 @@ class GamePolicy < ApplicationPolicy
   def new?
     true
   end
+
+  def show?
+    true
+  end
 end
