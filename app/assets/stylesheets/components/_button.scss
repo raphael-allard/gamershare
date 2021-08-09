@@ -14,7 +14,7 @@
     color: black;
   }
   &:hover {
-    background-color: #87f1e5;
+    background-color: $green-gamershare-light;
   }
 }
 
@@ -25,8 +25,9 @@
     color: $green-gamershare;
   }
   &:hover {
+    border-color: $green-gamershare-light;
     p {
-      color: white;
+      color: $green-gamershare-light;
     }
   }
 }
