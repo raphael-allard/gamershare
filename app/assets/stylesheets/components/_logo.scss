@@ -1,7 +1,8 @@
 .logo {
   font-size: 30px;
   color: $green-gamershare;
+  font-family: $headers-font;
   &:hover {
-    color: $green-gamershare;
+    color: $green-gamershare-light;
   }
 }

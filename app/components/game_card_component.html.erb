@@ -1,6 +1,6 @@
 <li class="game-card mt-2">
   <%= link_to games_path do %>
-    <div style="background: linear-gradient(307deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 0%), url('<%= @game.cover %>'); background-size: cover; height: 75%;"></div>
+    <div style="background: linear-gradient(307deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.6) 0%), url('<%= @game.cover %>'); background-size: cover; height: 75%;"></div>
 
     <div class="game-card__infos">
       <div class="game-card__infos__first-part">
@@ -8,20 +8,19 @@
         <i class="fas fa-heart"></i>
       </div>
 
-
       <div class="game-card__infos__second-part">
         <div>
-          <p>NOSTALGIA</p>
-          <p><%= @game.nostalgia_point %></p>
+          <h3>NOSTALGIA</h3>
+          <p><%= "#{@game.nostalgia_point} PTS" %></p>
         </div>
 
         <div>
-          <p>CITY</p>
+          <h3>CITY</h3>
           <p><%= @game.owner.city %></p>
         </div>
 
         <div>
-          <p>PLATFORM</p>
+          <h3>PLATFORM</h3>
           <p><%= @game.platform %></p>
         </div>
       </div>
