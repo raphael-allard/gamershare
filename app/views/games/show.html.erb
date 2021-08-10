@@ -1,3 +1,8 @@
 <%= @game.name %>
 <%= @game.owner.username %>
-<%= link_to "Ask for a trade", new_trade_path unless @game.owner == current_user %>
+
+<% unless @game.owner == current_user %>
+  <%= link_to "Ask for a trade", new_trade_path(asker: current_user,
+                                                receiver: @game.owner,
+                                                game: @game) %>
+<% end %>

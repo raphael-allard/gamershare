@@ -1,0 +1,21 @@
+<%= simple_form_for @trade do |f| %>
+  <%= f.input :asker, input_html: { value: @asker } %>
+  <%= f.input :receiver, input_html: { value: @receiver } %>
+
+  <%= f.fields_for :trade_games do |p| %>
+    <%= p.input :game,
+                collection: @asker.games,
+                label: "My library",
+                as: :check_boxes %>
+  <% end %>
+
+  <%= f.fields_for :trade_games do |p| %>
+    <%= p.input :game,
+                collection: @receiver.games,
+                label: "#{@receiver.username}'s library",
+                as: :check_boxes,
+                input_html: { checked: @receiver.games.include(Game.find(params[:game])) } %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
