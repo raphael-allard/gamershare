@@ -1,4 +1,4 @@
-<div style="background: url('<%= cl_image_path 'gamershare/retro-gaming' %>'); background-size: cover; height: 100vh;">
+<div id="games-index" style="background: url('<%= cl_image_path 'gamershare/retro-gaming' %>'); background-size: cover;">
   <div data-controller="refresh-games-list">
     <%= form_with url: games_path,
                   method: :get,
@@ -10,6 +10,6 @@
                       action: "keyup->refresh-games-list#update" } %>
     <% end %>
 
-    <%= render "games/partials/list", games: @games %>
+    <%= render "games/partials/games_list", games: @games %>
   </div>
 </div>

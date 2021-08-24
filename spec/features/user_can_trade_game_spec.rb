@@ -6,11 +6,11 @@ RSpec.describe "User can trade game", type: :feature do
     let(:receiver) { create(:user) }
     let(:game) { receiver.games.create(attributes_for :game) }
 
-    it "creates a new trade" do
+    it "can access to the good path" do
       sign_in(asker)
       visit game_path(game)
       click_on "Ask for a trade"
-      expect(page).to have_current_path(new_trade_path)
+      expect(page).to have_current_path(new_game_trade_path(game))
     end
   end
 end

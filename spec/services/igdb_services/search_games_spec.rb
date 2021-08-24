@@ -7,7 +7,7 @@ RSpec.describe IgdbServices::SearchGames do
     context 'when searches games' do
       it 'returns the right name' do
         list_of_games = search_games.call
-        expect(list_of_games.first["name"]).to eq("Ultimate Skyrim")
+        expect(list_of_games.first["name"]).to eq("The Elder Scrolls 5 Skyrim Anniversary Edition")
       end
     end
   end
