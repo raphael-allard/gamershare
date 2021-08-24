@@ -1,2 +1,8 @@
-<%= @game.name %>
-<%= @game.owner.username %>
+<div style="padding-top: 70px;">
+  <%= @game.name %>
+  <%= @game.owner.username %>
+
+  <% unless @game.owner == current_user %>
+    <%= link_to "Ask for a trade", new_game_trade_path(@game) %>
+  <% end %>
+</div>
