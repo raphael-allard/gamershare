@@ -4,8 +4,4 @@ class TradePolicy < ApplicationPolicy
       scope.all
     end
   end
-
-  def new?
-    true
-  end
 end
