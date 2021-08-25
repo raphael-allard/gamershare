@@ -4,4 +4,12 @@ class TradePolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def show?
+    record.asker == user || record.receiver == user
+  end
+
+  def create?
+    record.asker == user
+  end
 end

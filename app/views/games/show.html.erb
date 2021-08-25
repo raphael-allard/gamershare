@@ -3,6 +3,6 @@
   <%= @game.owner.username %>
 
   <% unless @game.owner == current_user %>
-    <%= link_to "Ask for a trade", new_game_trade_path(@game) %>
+    <%= link_to "Ask for a trade", game_trades_path(@game), method: :post %>
   <% end %>
 </div>
