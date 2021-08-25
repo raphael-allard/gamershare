@@ -10,6 +10,8 @@ class TradeTransition < ApplicationRecord
 
   belongs_to :trade, inverse_of: :trade_transitions
 
+  validates :to_state, inclusion: { in: TradeStateMachine.states }
+
   after_destroy :update_most_recent, if: :most_recent?
 
   private
