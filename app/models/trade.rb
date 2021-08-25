@@ -2,7 +2,7 @@ class Trade < ApplicationRecord
   belongs_to :asker, class_name: "User"
   belongs_to :receiver, class_name: "User"
   has_many :trade_games, dependent: :destroy
-  has_many :trade_transitions, autosave: false
+  has_many :trade_transitions, autosave: false, dependent: :destroy
 
   include Statesman::Adapters::ActiveRecordQueries[
     transition_class: TradeTransition,
