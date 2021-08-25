@@ -1,0 +1,7 @@
+<div style="padding-top: 70px;">
+  <h1><%= "Trade n°#{@trade.id}" %></h1>
+
+  <% @trade.trade_games.each do |trade_game| %>
+    <p><%= trade_game.game.name %></p>
+  <% end %>
+</div>

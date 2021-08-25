@@ -5,7 +5,11 @@ class TradePolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    record.asker == user || record.receiver == user
+  end
+
   def create?
-    true
+    record.asker == user
   end
 end

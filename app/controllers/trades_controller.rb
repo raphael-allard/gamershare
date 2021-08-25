@@ -1,4 +1,9 @@
 class TradesController < ApplicationController
+  def show
+    @trade = Trade.find(params[:id])
+    authorize @trade
+  end
+
   def create
     @trade = Trade.new
     @trade.asker = current_user
@@ -14,4 +19,5 @@ class TradesController < ApplicationController
       render "games/show"
     end
   end
+
 end
