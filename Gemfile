@@ -36,6 +36,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem "view_component", require: "view_component/engine"
 gem 'cloudinary'
+gem 'statesman'
 
 group :development, :test do
   gem 'pry-byebug'
