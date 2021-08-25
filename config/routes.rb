@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :games, only: [:index, :show, :new, :create] do
-    resources :trades, only: [:new, :create]
+    resources :trades, only: [:create]
   end
+
+  resources :trades, only: [:show]
 end

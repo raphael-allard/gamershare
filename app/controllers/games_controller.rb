@@ -8,7 +8,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.text { render partial: "games/partials/list.html", locals: { games: @games } }
+      format.text { render partial: "games/partials/games_list.html", locals: { games: @games } }
     end
   end
 
