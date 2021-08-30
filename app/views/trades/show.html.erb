@@ -1,7 +1,5 @@
-<div style="padding-top: 70px;">
-  <h1><%= "Trade n°#{@trade.id}" %></h1>
+<div style="padding-top: 100px;">
+  <h1 class="mb-3"><%= "Trade n°#{@trade.id}" %></h1>
 
-  <% @trade.trade_games.each do |trade_game| %>
-    <p><%= trade_game.game.name %></p>
-  <% end %>
+  <%= render "trades/partials/trade_form", trade: @trade %>
 </div>

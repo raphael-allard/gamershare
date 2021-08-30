@@ -1,6 +1,8 @@
 class TradesController < ApplicationController
   def show
     @trade = Trade.find(params[:id])
+    @asker_games = @trade.asker.games
+    @receiver_games = @trade.receiver.games
     authorize @trade
   end
 
@@ -20,4 +22,13 @@ class TradesController < ApplicationController
     end
   end
 
+  def update
+  end
+
+  private
+
+  def trade_params
+    params.require(:trade).permit(trade_games_attributes:
+      [:id, :trade, :game, :_destroy])
+  end  
 end

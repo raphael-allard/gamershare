@@ -1,0 +1,13 @@
+<%= simple_form_for @trade do |f| %>
+  <%= f.abyme_for(:trade_games) do |abyme| %>
+    <%= abyme.records %>
+    <%= abyme.new_records %>
+    <%= add_associated_record %>
+  <% end %>
+
+  <%#= f.abyme_for(:receiver_games) do |abyme| %>
+    <%#= abyme.records %>
+    <%#= abyme.new_records %>
+    <%#= add_associated_record %>
+  <%# end %>
+<% end %>
