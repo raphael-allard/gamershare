@@ -34,9 +34,15 @@ gem 'pundit'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+
 gem "view_component", require: "view_component/engine"
+
 gem 'cloudinary'
+
 gem 'statesman'
+
+gem 'sidekiq'
+gem 'sidekiq-failures'
 
 group :development, :test do
   gem 'pry-byebug'
