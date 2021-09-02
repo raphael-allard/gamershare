@@ -1,0 +1,23 @@
+#trades-new {
+  padding-top: 100px;
+
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 25px;
+    color: white;
+  }
+
+  #new_trade {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .new_trade__submit {
+    flex-basis: 100%;
+    padding: 8px;
+    margin: 30px 50%;
+  }
+}

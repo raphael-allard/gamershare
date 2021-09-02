@@ -1,13 +1,17 @@
 <%= simple_form_for @trade do |f| %>
-  <%= f.abyme_for(:trade_games) do |abyme| %>
+  <%= f.abyme_for(:asker_trade_games) do |abyme| %>
     <%= abyme.records %>
     <%= abyme.new_records %>
-    <%= add_associated_record %>
+    <%= add_associated_record(content: "Add game from my collection",
+                              html: {class: "btn btn-secondary"}) %>
   <% end %>
 
-  <%#= f.abyme_for(:receiver_games) do |abyme| %>
-    <%#= abyme.records %>
-    <%#= abyme.new_records %>
-    <%#= add_associated_record %>
-  <%# end %>
+  <%= f.abyme_for(:receiver_trade_games) do |abyme| %>
+    <%= abyme.records %>
+    <%= abyme.new_records %>
+    <%= add_associated_record(content: "Add game from #{@game.owner.username}'s collection",
+                              html: {class: "btn btn-secondary"}) %>
+  <% end %>
+
+  <%= f.submit class: "new_trade__submit btn btn-primary" %>
 <% end %>

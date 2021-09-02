@@ -1,5 +1,5 @@
-<div style="padding-top: 100px;">
-  <h1 class="mb-3"><%= "Trade n°#{@trade.id}" %></h1>
-
-  <%= render "trades/partials/trade_form", trade: @trade %>
+<div style="padding-top: 100px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('<%= cl_image_path 'gamershare/retro-gaming-trade' %>'); background-size: cover; min-height: 100vh;">
+  <% @trade.trade_games.each do |trade_game| %>
+    <p class="text-white"><%= trade_game.game.name %></p>
+  <% end %>
 </div>
