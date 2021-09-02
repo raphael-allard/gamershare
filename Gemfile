@@ -40,6 +40,7 @@ gem "view_component", require: "view_component/engine"
 gem 'cloudinary'
 
 gem 'statesman'
+gem 'abyme'
 
 gem 'sidekiq'
 gem 'sidekiq-failures'

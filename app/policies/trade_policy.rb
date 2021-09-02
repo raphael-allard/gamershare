@@ -9,6 +9,10 @@ class TradePolicy < ApplicationPolicy
     record.asker == user || record.receiver == user
   end
 
+  def new?
+    true
+  end
+
   def create?
     record.asker == user
   end
