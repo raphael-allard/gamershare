@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resources :trades, only: [:new]
   end
 
+  resources :profiles, only: [:show, :edit, :update]
+
   resources :trades, only: [:create, :show]
 end
