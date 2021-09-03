@@ -1,0 +1,9 @@
+<div style="padding-top: 100px;">
+  <%= simple_form_for @user, url: profile_path(@user), method: :patch do |f| %>
+    <%= f.input :email %>
+    <%= f.input :username %>
+    <%= f.input :city %>
+    <%= f.input :avatar, as: :file %>
+    <%= f.submit "Update my profile" %>
+  <% end %>
+</div>

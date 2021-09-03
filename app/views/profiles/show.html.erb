@@ -1,0 +1,6 @@
+<div style="padding-top: 100px;">
+  <h1><%= @user.username %></h1>
+  <p><%= "My city: #{@user.city}" %></p>
+  <p><%= "My nostalgia points: #{@user.total_nostalgia}" %></p>
+  <%= link_to "Edit my profile", edit_profile_path, class: "btn btn-secondary mt-4" %>
+</div>
